@@ -1,0 +1,595 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.pionek i path {
+    color: black;
+}
+
+.buttonJoin {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.game {
+    margin-top: 8%;
+    /* position: relative; */
+}
+
+.game table {
+    border-radius: 40px;
+    border-collapse: collapse;
+    border-style: hidden;
+    background-color: black;
+    box-shadow: 0 0 0 4px black;
+    
+}
+
+.game table tr:first-child td:first-child {
+    border-top-left-radius: 40px;
+}
+
+.game table tr:first-child td:last-child {
+    border-top-right-radius: 40px;
+}
+
+.game table tr:last-child td:first-child {
+    border-bottom-left-radius: 40px;
+}
+
+.game table tr:last-child td:last-child {
+    border-bottom-right-radius: 40px;
+}
+
+td{
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
+.plansza table {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: white;
+}
+
+.pole {
+    background: gray;
+    border: 4px solid black;
+    border-collapse: collapse;
+}
+
+.home {
+    border-collapse: collapse;
+    border: 4px solid black;
+}
+
+.finish {
+    border: 4px solid black;
+    border-collapse: collapse;
+}
+
+span.pionek {
+    font-size: 2.4em;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: blue;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.red{
+    background-color: red;
+}
+
+#copy_to_clippboard_b{
+    width: 60px;
+    height: 30px;
+    border: 2px black solid;
+    border-radius: 10%;
+    color: black;
+    outline: none;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s alternate-reverse;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 1.01em;
+    cursor: pointer;
+}
+
+/* -----------------------
+ -------- Pionki  --------
+ ------------------------ */
+
+.pionek.red path{
+    color: red;
+}
+
+.pionek.blue path{
+    color: rgb(89, 89, 253);
+}
+
+.pionek.green path{
+    color: green;
+}
+
+.pionek.yellow path{
+    color: yellow;
+}
+
+.pionek .fa-chess-pawn path {
+    stroke: black;
+    stroke-width: 30px;
+}
+
+.pionek {
+    background: none;
+    transition: filter 0.2s;
+}
+
+.pionek.red, .pionek.green, .pionek.blue, .pionek.yellow{
+    font-size: 2em;
+}
+
+.movable {
+    filter: drop-shadow(0 0 7px white) drop-shadow(0 0 7px white);
+}
+
+.movable:hover {
+    filter: drop-shadow(0 0 7px yellow) drop-shadow(0 0 7px yellow);
+}
+
+/* -----------------------
+ -------- Kostka  --------
+ ------------------------ */
+
+#kostka {
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3em;
+    background-color: transparent;
+    position: relative;
+    outline: none;
+}
+
+#kostka i path{
+    color: white;
+    transition: 0.35s;
+}
+
+#kostka:hover:enabled i path{
+    cursor: pointer;
+    color: rgb(255, 202, 27);
+}
+
+#kostka:disabled i path{
+    color: gray;
+}
+
+/* -----------------------
+ ---------- Bazy  --------
+ ------------------------ */
+
+.home{
+    background-color: white;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.backgroundYellow{
+    background-color: rgb(253, 253, 100);
+}
+
+.backgroundBlue{
+    background-color: rgb(53, 53, 246);
+}
+
+.backgroundRed{
+    background-color: rgb(255, 89, 89);
+}
+
+.backgroundGreen{
+    background-color: rgb(118, 241, 118);
+}
+
+.boardCenter{
+    background-color: black;
+}
+
+/* -----------------------
+ ------- Przyciski  ------
+ ------------------------ */
+
+#joinYellow, #joinRed, #joinBlue, #joinGreen{
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2.5em;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#joinYellow i path, #joinGreen i path, #joinBlue i path, #joinRed i path{
+    color: #1ec1e9;
+    transition: 0.5s;
+}
+
+#joinYellow:hover i path, #joinRed:hover i path, #joinBlue:hover i path, #joinGreen:hover i path{
+    color: rgb(255, 202, 27);
+    transform: scale(1.05);
+}
+
+/* #joinYellow :disabled, #joinGreen:disabled,  #joinBlue:disabled,  #joinRed:disabled{
+    background: transparent;
+    color: transparent;
+  } */
+
+#joinYellow:disabled i path, #joinGreen:disabled i path, #joinBlue:disabled i path, #joinRed:disabled i path{
+    color: transparent;
+    transform: none;
+}
+
+#joinYellow:disabled, #joinBlue:disabled, #joinGreen:disabled, #joinRed:disabled{
+    cursor: auto;
+}
+
+/* -----------------------
+ ------- Start game ------
+ ------------------------ */
+
+#startGame {
+    color: white;
+    position: absolute;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 1.8em;
+    text-decoration: none;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    transform: translate(-50%, 110%);
+    bottom: 20%;
+}
+
+#startGame:hover{
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    box-shadow: 
+    0 0 20px var(--primary-color),
+    0 0 80px var(--primary-color),
+    0 0 160px var(--primary-color),
+    0 0 270px var(--primary-color);
+}
+
+/* -----------------------
+ ----- Tabela graczy -----
+ ------------------------ */
+
+#tabela_div {
+    float: left;
+    margin-left: 5%;
+    margin-top: 8%;
+    font-family: 'Roboto';
+    font-weight: 600;
+    transition: transform 0.5s;
+    text-decoration: none;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+    height: 550px;
+}
+
+#tabela_div {
+    border: 4px white solid;
+    border-radius: 5%;
+    table-layout: fixed;
+    padding: 5px;
+}
+
+#table_div table {
+    border-radius: 55%;
+    border-collapse: collapse;
+}
+
+#tabela_div td{
+    color: white;
+    border: 2px black solid;
+    /* border-radius: 5%; */
+}
+
+#tabela_div span{
+    color: white;
+}
+
+.tab_color{
+    width: 15%;
+    height: 10%;
+    border-radius: 30%;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.nick {
+    font-size: 1.3em;
+}
+
+#tab_red{
+    border-radius: 30%;
+    background-size: 50%;
+    background: linear-gradient(-45deg, #ff3c01, #ffb8d3);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+#tab_green{
+    border-radius: 30%;
+    background: linear-gradient(-45deg, #00ff15, #c3f6b6);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+#tab_blue{
+    border-radius: 30%;
+    background: linear-gradient(-45deg, #0099ff, #acc0e6);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+#tab_yellow{
+    border-radius: 30%;
+    background: linear-gradient(-45deg, hsl(56, 100%, 50%), #f6f1ad);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+#tab_player_1, #tab_player_2, #tab_player_3, #tab_player_4{
+    margin-left: 5px;
+}
+
+td{
+    text-align: center; 
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;}
+
+.tab_rank i path{
+    color: gold;
+}
+
+.tab_rank{
+    font-size: 2.5em;
+}
+
+.tab_rank .fa-chess-pawn path {
+    stroke: black;
+    stroke-width: 30px;
+}
+
+#podium td{
+    font-size: 20.8px;
+}
+
+/* -----------------------
+ --------- Czat ----------
+ ------------------------ */
+    
+ #chat_div {
+    float: right;
+    margin-right: 5%;
+    font-family: 'Roboto';
+    /* font-weight: 600; */
+    transition: transform 0.5s;
+    text-decoration: none;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+    color: white;
+    width: 400px;
+    height: 550px;
+    border: 4px white solid;
+    border-radius: 5%;
+    padding: 5px;
+}
+
+#chat_text{
+    height: 90%;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+#chat_text p {
+    font-size: 1.3em;
+    margin: 0.4em;
+    text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
+#chat_input{
+    height: 10%;
+    margin: 0;
+}
+
+#chat_in_game_input {
+    background-color: transparent;
+    margin-left: 7px;
+    height: 70%;
+    width: 76%;
+    outline: none;
+    text-align: center;
+}
+
+#chat_in_game_button {
+    border: 2px black solid;
+    outline: none;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s alternate-reverse;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.greenMsg b {
+    color: rgb(2, 228, 2);
+}
+
+.redMsg b {
+    color: rgb(241, 68, 68);
+}
+
+/* -----------------------
+ ------- SCROLLBAR --------
+ ------------------------ */
+
+
+#chat_text:-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#chat_text::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+#chat_text::-webkit-scrollbar-thumb
+{
+    background-color: #000000;
+}
+
+/* -----------------------
+ ------- SCROLLBAR --------
+ ------------------------ */
+
+ .swal2-popup {
+    color: #ffffff;
+    /* text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px; */
+    font-family: 'Roboto';
+}
+
+/* -----------------------
+ ------- BLUR SA --------
+ ------------------------ */
+
+body.swal2-shown > [aria-hidden="true"] {
+    filter: blur(10px);
+}
+
+body > * {
+    transition: 0.1s filter linear;
+}
+
+/* -----------------------
+ ------ Czary Mary -------
+ ------------------------ */
+
+.active_player{
+    background: linear-gradient(-45deg, rgb(255, 102, 0), #faffcf);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+#podium_g{
+    background: linear-gradient(-45deg, gold, #f3f8c2);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+#podium_s{
+    background: linear-gradient(-45deg, silver, #fefff5);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+#podium_b{
+    background: linear-gradient(-45deg, rgb(221, 126, 63),rgb(233, 203, 73));
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+.unranked i path{
+    color: rgb(136, 136, 136);
+}
+.bronze i path{
+    color: rgb(179, 111, 3);
+}
+.silver i path{
+    color: silver;
+}
+.gold i path{
+    color: gold;
+}
+.diamond i path{
+    color: rgb(0, 217, 255);
+}
+.grand_master i path{
+    color: rgb(89, 0, 255);
+}
+.infinity_master i path{
+    color: rgb(0, 218, 29);
+}
+
+
+/* -----------------------
+ -------- Cegły  ---------
+ ------------------------ */
+
+.pole{
+    background: url('../images/all_stonebrick_path_pattern.png') 0 192px;
+    background-size: 96px;
+}
+
+.pole.start.red, .finish.red{
+    background: url('../images/all_stonebrick_path_pattern.png') 0 96px;
+    background-size: 96px;
+}
+
+.pole.start.yellow, .finish.yellow{
+    background: url('../images/all_stonebrick_path_pattern.png') 0 0;
+    background-size: 96px;
+}
+
+.pole.start.green, .finish.green{
+    background: url('../images/all_stonebrick_path_pattern.png') 48px 0;
+    background-size: 96px;
+}
+
+.pole.start.blue, .finish.blue{
+    background: url('../images/all_stonebrick_path_pattern.png') 46px 96px;
+    background-size: 96px;
+    filter: contrast(200%);
+}
+
+.pionek_50 i{
+    font-size: 0.7em;
+}
+
+.pionek_25 i{
+    font-size: 0.6em;
+}

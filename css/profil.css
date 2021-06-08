@@ -1,0 +1,209 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#p_edit_b {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 1em;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+/* -----------------------
+ ------ Profile box ------
+ ------------------------ */
+
+.serversList {
+    height: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+}
+
+#p_box {
+    position: relative;
+    display: block;
+    height: 600px;
+    border-radius: 15px;
+    padding: 10px;
+    justify-content: center;
+    max-width: 20px 30px;
+    transition: transform 0.5s;
+    border-radius: 15px;
+    font-family: 'Sarpanch', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    background: #111;
+}
+
+#p_box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #000877, #2f8000);
+    border-radius: 15px;
+}
+
+#p_box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #000877, #2f8000);
+    border-radius: 15px;
+    filter: blur(30px);
+}
+
+#p_box span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: rgb(0, 0, 0, 0.6);
+    border-radius: 15px;
+    z-index: 2;
+}
+
+#p_box .p_content {
+    position: relative;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+
+#p_opis_cell{
+    height: 50px;
+    font-size: 1.2em;
+}
+
+/* -----------------------
+ ----- Profile table -----
+ ------------------------ */
+
+#p_box table {
+    border-radius: 55%;
+    border-collapse: collapse;
+}
+
+table tr td{
+    font-size: 1.5em;
+    /* border: 2px white solid;
+    border-collapse:collapse; */
+    text-align: center;
+}
+
+tr{
+    height: 100px;
+}
+
+#p_nick{
+    font-size: 1.5em;
+    color: rgb(190, 111, 111);
+    text-shadow: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) 0.540302px 0.841471px 0px, rgb(255, 255, 255) -0.416147px 0.909297px 0px, rgb(255, 255, 255) -0.989992px 0.14112px 0px, rgb(255, 255, 255) -0.653644px -0.756802px 0px, rgb(255, 255, 255) 0.283662px -0.958924px 0px, rgb(255, 255, 255) 0.96017px -0.279415px 0px;}
+
+#p_avatar img{
+    border: 2px white solid;
+    border-radius: 5%;
+}
+
+.styl_a{
+    color: rgb(255, 208, 0);
+}
+
+.styl_b{
+    color: rgb(252, 255, 238);
+}
+/* -----------------------
+ ---------- Rank ---------
+ ------------------------ */
+
+#elo_cell{
+    text-align: left;
+}
+
+#elo{
+    width: 90%;
+    text-align: left;
+    border: 2px white solid;
+}
+
+#p_rank{
+    margin-top: 0;
+    font-size: 5em;
+}
+
+#p_rank .fa-chess-pawn path {
+    stroke: black;
+    stroke-width: 30px;
+}
+
+.unranked i path{
+    color: rgb(136, 136, 136);
+}
+.bronze i path{
+    color: rgb(179, 111, 3);
+}
+.silver i path{
+    color: silver;
+}
+.gold i path{
+    color: gold;
+}
+.diamond i path{
+    color: rgb(0, 217, 255);
+}
+.grand_master i path{
+    color: rgb(89, 0, 255);
+}
+.infinity_master i path{
+    color: rgb(0, 218, 29);
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted rgb(163, 163, 163); /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    margin-left: 70px;
+    margin-bottom: 5px;
+    visibility: hidden;
+    width: 120px;
+    height: 55%;
+    background-color: rgb(255, 255, 255);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

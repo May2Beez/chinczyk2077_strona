@@ -1,0 +1,135 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    top: -50;
+    width: 100%; /* Full width */
+    height: 150%; /* Full height */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid rgb(245, 11, 253);
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content{
+    height: 800px;
+    background: linear-gradient(-45deg, #333333, #000000);
+	background-size: 400% 400%;
+	animation: gradient 30s alternate-reverse;
+    font-family: 'Roboto';
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#myModal {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal-content{
+    border-radius: 3%;
+    backdrop-filter: blur(5px);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 3em;
+}
+
+.modal-content table{
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s alternate-reverse;
+    border: 4px white solid;
+    border-radius: 3%;
+    height: 35%;
+}
+
+.modal-content table tr td{
+    border: 2px black solid;
+    text-transform: none;
+}
+
+#podium_g{
+    background: linear-gradient(-45deg, gold, #f3f8c2);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+#podium_s{
+    background: linear-gradient(-45deg, silver, #fefff5);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+#podium_b{
+    background: linear-gradient(-45deg, rgb(221, 126, 63),rgb(233, 203, 73));
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
